@@ -1,5 +1,5 @@
 # cursorFollower
-
+https://leongu11.github.io/cursorFollower/
 Inspired by Kylan O'Connor's portfolio, I decided to build my own cursor-following website. 
 It was especially fun watching how ordinary math concepts, like trig in this case, can be applied into these types of features. 
 I feel like this project deepend both my understanding of HTML/JS and math concepts I have learned.
