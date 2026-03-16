@@ -8,19 +8,31 @@ var ydirFlag = 0;
 // var origin = [window.innerWidth/2,window.innerHeight/2];
 
 //replace if not want hardcoded and tweak
-var origin = [723,window.innerHeight-566];
+var origin = getEyeCenter()
 var rotateAngle = 0;
 
 document.addEventListener("mousemove", function(event) {
-    // console.log(event.clientX,event.clientY)
+    const cursor = document.getElementById("cursor")
+    cursor.style.left = event.clientX + "px"
+    cursor.style.top = event.clientY + "px"
     //js find one angle and good enough
+    origin = getEyeCenter()
     rotateAngle = mathTime(event.clientX,event.clientY,origin)
     rotateImage(rotateAngle)
     // console.log(rotateAngle)
 });
 
-
 // i firkeing love funcitons okay jeesh louish
+function getEyeCenter () {
+    const eyeP = document.querySelector(".imagechange")
+    const place1 = eyeP.getBoundingClientRect()
+
+    eyeY = place1.top + place1.height /2
+    eyeX = place1.left + place1.width /2
+    
+    return [eyeX,eyeY]
+}
+
 function rotateImage (rotateAngle) {
     const images = document.querySelectorAll("#rotatings img");
     let angle = -1*(rotateAngle+90)
@@ -37,31 +49,12 @@ function findAngle (x,y) {
     
 }
 
-
 function mathTime (mouseX,mouseY,origin) {
-    
-     disX = mouseX - origin[0]
-     disY = origin[1] - mouseY 
+    disX = mouseX - origin[0]
+    disY = origin[1] - mouseY 
     
     console.log(origin,mouseX,mouseY,disX,disY)
     rotateAngle = findAngle(disX,disY)
 
     return rotateAngle
-
-//     disX = Math.abs(mouseX - origin[0])
-//     disY = Math.abs(mouseY - origin[1])
-//     absAngle = findAngle(disX,disY)
-
-//     //q1case
-//     if (xdirFlag == 0 && ydirFlag == 0) {
-//         rotateAngle = -90-absAngle
-//     } else if (xdirFlag == 1 && ydirFlag == 0) { //q2
-//         rotateAngle = 90 + absAngle
-//     } else if (xdirFlag == 0 && ydirFlag == 1) { //q3
-//         rotateAngle = absAngle
-//     } else { //q4
-//         rotateAngle = -1 * absAngle
-//     }
-
-//     return rotateAngle
 }
