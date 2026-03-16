@@ -8,7 +8,7 @@ var ydirFlag = 0;
 // var origin = [window.innerWidth/2,window.innerHeight/2];
 
 //replace if not want hardcoded and tweak
-var origin = [723,557];
+var origin = [723,window.innerHeight-566];
 var rotateAngle = 0;
 
 document.addEventListener("mousemove", function(event) {
