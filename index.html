@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Title</title>
-    <script src="face.js"></script>
+    <script src="face.js" defer></script>
 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital@0;1&display=swap');
+
         body {
             /* outline: 5px solid red; */
             display: flex; 
@@ -47,15 +49,42 @@
             left: 757px;
             position: absolute;
         }
+
+        .credit {
+            position: fixed;
+            bottom: 18px;
+            right: 24px;
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            font-style: italic;
+            color: transparent;
+            background: linear-gradient(90deg, #a0a0a0, #404040);
+            -webkit-background-clip: text;
+            background-clip: text;
+            letter-spacing: 1.5px;
+            opacity: 0.6;
+            user-select: none;
+        }
+
+        .credit span {
+            font-style: normal;
+            font-weight: 1000;
+            color: transparent;
+            background: linear-gradient(90deg, #2596ff, #0810ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
     </style>
 </head>
 <body>
-    <div class = 'anch'>
-        <img class = 'simps' src = "/Users/leobeast/Documents/facelooker/simpsons.png" alt = "homer">
+    <div class='anch'>
+        <img class='simps' src="/Users/leobeast/Documents/facelooker/simpsons.png" alt="homer">
     </div>
-    <div class = 'divchange' id = "rotatings">
-        <img class = 'imagechange' src="/Users/leobeast/Documents/facelooker/eye3.png" alt="temp">
-        <img class = 'imagechange2' src="/Users/leobeast/Documents/facelooker/eye3.png" alt="temp">
+    <div class='divchange' id="rotatings">
+        <img class='imagechange' src="/Users/leobeast/Documents/facelooker/eye3.png" alt="temp">
+        <img class='imagechange2' src="/Users/leobeast/Documents/facelooker/eye3.png" alt="temp">
     </div>
+
+    <p class="credit">made by <span>Leo Nguyen</span></p>
 </body>
 </html>
